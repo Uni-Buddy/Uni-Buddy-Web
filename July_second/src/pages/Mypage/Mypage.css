@@ -1,0 +1,72 @@
+.Share_Logo {
+    display: block;
+    padding: 5% 0 2% 0;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+}
+
+
+/*.profileimg {
+    margin-bottom: 10px;
+}*/
+
+.Imagepreview {
+    position: relative;
+    top: 300px;
+    left: 15%;
+    width: 20%;
+    height: 200px;
+    border-radius: 70%;
+}
+
+
+.Myinformation {
+    position: absolute;
+    left: 30%;
+    top: 300px;
+    bottom: 0;
+    right: 0;
+}
+
+.Name,
+.Username,
+.Password,
+.University,
+.Birthday,
+.Tel {
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1rem;
+    width: 50%;
+    height: 40px;
+    margin: 10px;
+    border-bottom: 1px solid rgb(143, 143, 143);
+    border-radius: 1px;
+    position: relative;
+    left: 10%
+}
+
+
+.My_Aside {
+    position: relative;
+    right: 11.5%;
+    margin-left: 25%;
+}
+
+.My_Button {
+    margin: 5% 0 0 5%;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+    color: black;
+    border: 0.04cm solid black;
+    background: white;
+    border-radius: 5px;
+}
+
+.My_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}
