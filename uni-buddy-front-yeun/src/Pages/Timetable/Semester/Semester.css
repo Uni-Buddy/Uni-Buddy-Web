@@ -1,0 +1,45 @@
+.left {
+    display: block;
+    position: relative;
+    left: 8%
+}
+
+.container {
+    width: 350px;
+    height: 250px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.slick-slide {
+    height: 200px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.slick-slide h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+
+
+.GPA {
+    display: flex;
+
+}
+
+.GPAtext {
+    position: relative;
+    left: 22%;
+    border: 1px solid #868e96;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.GPAsave {
+    position: relative;
+    left: 28%;
+}
