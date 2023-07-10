@@ -1,0 +1,14 @@
+.Menu {
+    position: absolute;
+    right: 0;
+    display: inline-flex;
+    float: right;
+    margin-right: 7%;
+    writing-mode: vertical-lr;
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+
+.Logout {
+    color: rgb(218, 55, 55);
+}
