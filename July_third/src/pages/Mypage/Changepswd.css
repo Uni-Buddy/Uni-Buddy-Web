@@ -1,0 +1,49 @@
+.My_Head {
+    width: 100%;
+    height: 200px;
+    opacity: 0.8;
+}
+
+.My_My {
+    position: relative;
+    margin: -1% 0 0 15%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.My_Iconwrite {
+    margin: 2% 0 0 15%;
+    font-size: 0.8cm;
+    font-weight: 600;
+}
+
+.changepswd {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+}
+
+.Pswd_Aside {
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.Pswd_Button {
+    margin-left: 5%;
+    text-align: center;
+    width: 160px;
+    height: 35px;
+    font-size: 20px;
+    color: black;
+    border: 0.04cm solid black;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.Pswd_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}
