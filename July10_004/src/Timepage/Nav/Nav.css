@@ -1,0 +1,55 @@
+.Share_Menu {
+    position: fixed;
+    right: 0;
+    margin: -11%6%0 0;
+}
+
+.Share_Diarylist,
+.Share_Calendar,
+.Share_Diary,
+.Share_Time,
+.Share_Mypage {
+    border-bottom: 0.04cm solid rgb (71, 71, 71);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.Share_Diarylist,
+.Share_Calendar,
+.Share_Diary,
+.Share_Time,
+.Share_Mypage,
+.Share_Logout {
+    writing-mode: vertical-lr;
+    font-size: 17px;
+    letter-spacing: 10px;
+    background-color: white;
+    display: block;
+    padding: 20px 0 10px 0;
+}
+
+.Share_Logout {
+    color: rgb (218, 55, 55);
+    border: none;
+}
+
+/* 호버 효과
+예시 ) 일지작성 페이지의 경우 : .Share_Diary:hover 삭제해야 함. 
+이유 ) 해당 페이지는 hover 효과 없이 원래 글씨가 bold인 상태이기 때문. 
+*/
+.Share_Diarylist:hover,
+.Share_Calendar:hover,
+.Share_Diary:hover,
+.Share_Time:hover,
+.Share_Mypage:hover,
+.Share_Logout:hover {
+    font-weight: bold;
+}
+
+/* 호버 효과 삭제 시 아래 코드 추가 필요 
+       – 해당 페이지마다 클래스 이름 알맞게 작성해야 함.
+    .Share_Diary{
+       font-weight : bold ;
+    }
+    */
