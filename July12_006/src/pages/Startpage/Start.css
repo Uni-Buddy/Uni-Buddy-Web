@@ -1,0 +1,108 @@
+/*시작 페이지*/
+
+/* 폰트 적용
+@font-face {
+    src: url("./fonts/");
+    font-family: " ";
+    unicode-range: ;
+  }
+*/
+
+.Start_Snow{
+    position: absolute;
+    top: 22%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: 100;
+
+}
+
+.Start_Text1 {
+    position: absolute;
+    top: 43%;
+    left: 31%;
+    line-height : 2cm;
+    font-size: 130px;
+    text-align: center;
+    font-weight: 700;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translate3d(0, 70%, 0);
+    }
+    to {
+        transform: translateZ(0);
+    }
+}
+
+.Start_Picture {
+    position: absolute;
+    top: 23%;
+    left: 43%;
+    width:270px;
+    height:390px;
+    overflow:hidden;
+    opacity: 0.55;
+    border-top-left-radius:200px;
+    border-top-right-radius:200px;
+    animation: fadeInUp 2s;
+}
+
+.Start_Img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.Start_Underbutton{
+    position: absolute;
+    top: 84%;
+    left: 49%;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    border: 0.05cm solid black;
+    background: white;
+    text-align : center;
+    border-radius: 100px;
+    color:black;
+}
+
+.Start_Text2 {
+    position: absolute;
+    top: 110%;
+    left: 28%;
+    line-height : 2cm;
+    font-size: 0.6cm;
+    text-align: center;
+}
+
+.Start_Footer{
+    position: absolute;
+    top: 160%;
+    left: 30%;
+    padding-bottom: 5%;
+    margin: 0 auto; 
+    width: 50%;
+}
+
+.Start_Button {
+    margin-left : 10%;
+    width: 250px;
+    height: 60px;
+    font-size: 30px;
+    border: 0.05cm solid black;
+    background: white;
+    text-align : center;
+    border-radius: 100px;
+    color:black;
+    text-decoration:none;
+}
+
+.Start_Button:hover, .Start_Underbutton:hover{
+    background: #244F9E;
+    border: 0.05cm solid #244F9E;
+    color:aliceblue;
+}
