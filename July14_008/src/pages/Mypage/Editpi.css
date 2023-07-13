@@ -1,0 +1,59 @@
+.Share_Logo {
+    display: block;
+    padding: 5% 0 2% 0;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+}
+
+
+/*.profileimg {
+    margin-bottom: 10px;
+}*/
+
+.Imagepreview {
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 70%;
+}
+
+.Filechoose {
+    position: absolute;
+    top: 520px;
+    left: 13%;
+}
+
+.Information {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    width: 50%;
+}
+
+
+
+.Edit_Aside {
+    position: relative;
+    right: 11.5%;
+    margin-left: 25%;
+}
+
+.Edit_Button {
+    margin: 5% 0 0 5%;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+    color: black;
+    border: 0.04cm solid black;
+    background: white;
+    border-radius: 5px;
+}
+
+.Edit_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}
