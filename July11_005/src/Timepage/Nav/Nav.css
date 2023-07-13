@@ -1,0 +1,75 @@
+    .Time_Head{
+    width: 100%;
+    height: 200px;
+    opacity: 0.8;
+  }
+  
+  .Time_Writeimg{
+    position: relative;
+    margin: -1% 0 0 15%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+  
+  .Time_Iconwrite{
+    margin: 2% 0 0 15%;
+    font-size: 0.8cm;
+    font-weight: 600;
+  }
+  
+  .Time_Nav{
+    position: fixed;
+    right: 0;
+    margin: -4% 3% 0 0;
+  }
+  
+  .Time_Logo{
+    display: block;
+    margin: -50% 0 2% -25%;
+    width: 60px;
+    height: 40px;
+  }
+
+.Time_Diarylist,
+.Time_Calendar,
+.Time_Diary,
+.Time_Time,
+.Time_Mypage {
+    border-bottom: 0.04cm solid rgb (71, 71, 71);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.Time_Diarylist,
+.Time_Calendar,
+.Time_Diary,
+.Time_Time,
+.Time_Mypage,
+.Time_Logout {
+    writing-mode: vertical-lr;
+    font-size: 17px;
+    letter-spacing: 10px;
+    background-color: white;
+    display: block;
+    padding: 20px 0 10px 0;
+}
+
+.Time_Mypage{
+    font-weight: bold;
+}
+
+.Time_Logout {
+    color: rgb(218, 55, 55);
+    border: none;
+}
+
+.Time_Diarylist:hover,
+.Time_Calendar:hover,
+.Time_Diary:hover,
+.Time_Time:hover,
+.Time_Mypage:hover,
+.Time_Logout:hover {
+    font-weight: bold;
+}

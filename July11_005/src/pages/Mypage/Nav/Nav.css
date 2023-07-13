@@ -1,0 +1,86 @@
+    .My_Head{
+    width: 100%;
+    height: 200px;
+    opacity: 0.8;
+  }
+  
+  .My_Writeimg{
+    position: relative;
+    margin: -1% 0 0 15%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+  
+  .My_Iconwrite{
+    margin: 2% 0 0 15%;
+    font-size: 0.8cm;
+    font-weight: 600;
+  }
+  
+  .My_Nav{
+    position: fixed;
+    right: 0;
+    margin: -4% 3% 0 0;
+  }
+  
+  .My_Logo{
+    display: block;
+    margin: -50% 0 2% -25%;
+    width: 60px;
+    height: 40px;
+  }
+
+.My_Diarylist,
+.My_Calendar,
+.My_Diary,
+.My_Time,
+.My_Mypage {
+    border-bottom: 0.04cm solid rgb (71, 71, 71);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.My_Diarylist,
+.My_Calendar,
+.My_Diary,
+.My_Time,
+.My_Mypage,
+.My_Logout {
+    writing-mode: vertical-lr;
+    font-size: 17px;
+    letter-spacing: 10px;
+    background-color: white;
+    display: block;
+    padding: 20px 0 10px 0;
+}
+
+.My_Mypage{
+    font-weight: bold;
+}
+
+.My_Logout {
+    color: rgb(218, 55, 55);
+    border: none;
+}
+
+/* 호버 효과
+예시 ) 일지작성 페이지의 경우 : .Share_Diary:hover 삭제해야 함. 
+이유 ) 해당 페이지는 hover 효과 없이 원래 글씨가 bold인 상태이기 때문. 
+*/
+.My_Diarylist:hover,
+.My_Calendar:hover,
+.My_Diary:hover,
+.My_Time:hover,
+.My_Mypage:hover,
+.My_Logout:hover {
+    font-weight: bold;
+}
+
+/* 호버 효과 삭제 시 아래 코드 추가 필요 
+       – 해당 페이지마다 클래스 이름 알맞게 작성해야 함.
+    .Share_Diary{
+       font-weight : bold ;
+    }
+    */
