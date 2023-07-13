@@ -1,0 +1,188 @@
+/* 일지 목록 페이지 */
+
+/* 배경 */
+.List_Head{
+  width: 100%;
+  height: 200px;
+  opacity: 0.8;
+}
+/* 페이지 아이콘 */
+.List_Listimg{
+  position: relative;
+  margin: -1% 0 0 14.5%;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+/* 페이지 아이콘 아래 단어 : 리스트 */
+.List_Iconwrite{
+  margin: 2% 0 0 15%;
+  font-size: 0.8cm;
+  font-weight: 600;
+}
+/* 메뉴 : 로고 포함 */
+.List_Nav{
+  position: fixed;
+  right: 0;
+  margin: -4% 5% 0 0;
+}
+/* 메뉴 : 로고 */
+.List_Logo{
+  display: block;
+  margin: -50% 0 2% -25%;
+  width: 60px;
+  height: 40px;
+}
+/* 메뉴 : 로고 & 로그아웃 제외 */
+.List_Diarylist, 
+.List_Calendar, 
+.List_Diary,
+.List_Time, 
+.List_Mypage{
+  border-bottom: 0.04cm solid rgb(71, 71, 71);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  }
+/* 메뉴 : 전부 */
+.List_Diarylist, 
+.List_Calendar, 
+.List_Diary,
+.List_Time, 
+.List_Mypage, 
+.List_Logout{
+  writing-mode: vertical-lr;
+  font-size: 15px;
+  letter-spacing: 5px;
+  background-color: white;
+  display: block;
+  padding: 20px 0 10px 0;
+}
+/* 메뉴 : 게시판 */
+.List_Diarylist{
+  font-weight: bold;
+  font-size: 15px;
+}
+/* 메뉴 : 로그아웃 */
+.List_Logout{
+  color:rgb(218, 55, 55);
+  border: none;
+}
+/* 메뉴 : 호버효과 */
+.List_Diarylist:hover, 
+.List_Calendar:hover, 
+.List_Diary:hover, 
+.List_Time:hover, 
+.List_Mypage:hover, 
+.List_Logout:hover{
+  font-weight: bold;
+}
+/* 최신글 박스 */
+.List_Section{
+  position: relative;
+  margin: 2% 0 0 15%;
+  padding: 1%;
+  width: 65%;
+  background-color: rgb(241, 241, 241, 0.5);
+}
+/* 최신글 */
+.List_New{
+  margin: 0 0 3% 1%;
+  font-size: 16px;
+  color: #3270e4;
+  font-weight: 600;
+}
+.List_Listbox{
+  margin-left: 10%;
+}
+/* 제목 */
+.List_Title{
+  font-size: 22px;
+  margin-bottom: 0.2%;
+}
+/* 내용 */
+.List_Content{
+  font-size: 18px;
+  color: rgb(32, 32, 32);
+}
+/* 제목 & 내용 : 호버효과 */
+.List_Listbox:hover:not(.List_Content){
+  font-weight: 600;
+}
+/* hr 선 */
+.List_Hr{
+  margin: 2% 0 2% 10%;
+  width: 80%;
+  color: gray;
+}
+/* 화면 최상단으로 이동하는 버튼 */
+.List_Footer{
+  position: fixed;
+  right: 0;
+  margin: 0 3% 1% 0;
+  bottom: 0;
+}
+/* 최상단 이동 버튼 */
+.List_Button {
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  color: black;
+  border: 0.03cm solid rgb(241, 241, 241, 0.7);
+  background: white;
+  border-radius: 100%;
+  box-shadow: 2px 3px 3px -1px gray;
+}
+/* 최상단 이동 버튼 : 호버효과 */
+.List_Button:hover{
+  color:aliceblue;
+  background: #244F9E;
+  border: none;
+}
+
+
+/*
+.List_section{
+  margin: 2% 0 0 8%;
+  width: 80%;
+  padding-top: 0;
+  display: inline-flex;
+}
+
+.List_Leftbox{
+  padding: 3% 0 3% 2%;
+  margin-left: 5%;
+  width: 17%;
+  min-height: 500px;
+  float: left;
+  Text-Align: left;
+  font-size: 0.7cm;
+  background-color: rgb(241, 241, 241, 0.5);
+}
+
+.List_Box{
+  margin: 0 0 10% 5%;
+  padding-top: 5%;
+}
+  
+.List_Category{
+  padding-bottom: 15%;
+  border:none;
+  font-size: 0.6cm;
+  background-color: rgb(241, 241, 241, 0);
+}
+
+.List_Category:hover{
+  font-weight: bold;    
+}
+
+.List_Rightbox{ 
+  padding: 3% 0 0 5%;
+  margin-left: 5%;
+  width: 60%;
+  min-height: 500px;
+  float: right;
+  background-color: rgb(241, 241, 241, 0.5);
+}
+*/
+

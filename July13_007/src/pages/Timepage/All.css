@@ -1,0 +1,12 @@
+.all {
+    margin-top: 1%;
+    display: flex;
+}
+
+.Share_Logo {
+    display: block;
+    padding: 5% 0 2% 0;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+}

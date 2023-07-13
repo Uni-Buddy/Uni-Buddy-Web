@@ -1,0 +1,38 @@
+.Share_Logo {
+    display: block;
+    padding: 5% 0 2% 0;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+}
+
+
+.changepswd {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+}
+
+.Pswd_Aside {
+    position: relative;
+    right: 11.5%;
+    margin-left: 25%;
+}
+
+.Pswd_Button {
+    margin: 5% 0 0 5%;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    font-size: 28px;
+    color: black;
+    border: 0.04cm solid black;
+    background: white;
+    border-radius: 5px;
+}
+
+.Pswd_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}
