@@ -1,0 +1,27 @@
+/* 시간표 css */
+
+/* 'Timetablecell.jsx'의 강의명 */
+.timeData.name {
+    font-size: larger;
+}
+
+/* 'Timetable.jsx'의 시간표 추가 버튼 */
+.Time_Plus_Button {
+    border-color: black;
+    background: white;
+    font-size: 24px;
+    margin-top: 10px;
+    border-radius: 70%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 93%;
+
+}
+
+/* 'Timetable.jsx'의 시간표 추가 버튼 호버 */
+.Time_Plus_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}
