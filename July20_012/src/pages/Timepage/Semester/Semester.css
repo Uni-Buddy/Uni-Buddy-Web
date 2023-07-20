@@ -1,0 +1,106 @@
+/* 학년-학기-학점 영역 */
+.Sem_All {
+    display: block;
+    position: relative;
+    left: 8%
+}
+
+/* 학년-학기 영역 */
+.Sem_Container {
+    width: 350px;
+    height: 250px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+
+
+/* <h3> 폰트 설정 */
+.slick-slide h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+
+
+/* 학점 영역 */
+.Sem_GPA {
+    display: flex;
+    position: relative;
+    left: 22%;
+}
+
+
+/* 평군학점 */
+.Sem_GPAavg {
+    position: relative;
+    left: 22%;
+    top: 0%;
+    font-size: 1rem;
+}
+
+
+
+/* 평균학점 input */
+.Sem_GPAavginput {
+    position: relative;
+    left: 22%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: #f94242;
+    line-height: 1.5;
+    width: 50px;
+}
+
+/* 평균학점 input : outline 없애기 */
+.Sem_GPAavginput:focus {
+    outline: none;
+}
+
+/* '/4.5' */
+.Sem_GPAavgtext {
+    position: relative;
+    left: 18%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 5%;
+}
+
+/* 취득학점 */
+.Sem_GPAget {
+    position: relative;
+    left: 22%;
+    top: 0%;
+    font-size: 1rem;
+}
+
+
+/* 취득학점 input */
+.Sem_GPAgetinput {
+    position: relative;
+    left: 22%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: #f94242;
+    line-height: 1.5;
+    width: 50px;
+}
+
+/* 취득학점 input : outline 없애기 */
+.Sem_GPAgetinput:focus {
+    outline: none;
+}
+
+/* '/18' */
+.Sem_GPAgettext {
+    position: relative;
+    left: 15%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 5%;
+}
