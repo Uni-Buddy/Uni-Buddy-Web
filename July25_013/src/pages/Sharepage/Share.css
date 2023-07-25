@@ -1,0 +1,165 @@
+/* 공유 페이지 */
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 로고 */
+.Share_Logo {
+  display: block;
+  padding: 5% 0 2% 0;
+  margin: 0 auto;
+  width: 180px;
+  height: 120px;
+}
+
+/* 공유 버튼 */
+.Share_Sharebutton {
+  display: block;
+  margin-left: -25%;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: none;
+  background-color: white;
+  border: 0.05cm solid white;
+}
+.Share_Shareimg {
+  display: block;
+  margin-left: -7%;
+  width: 30px;
+  height: 30px;
+}
+/* 공유 버튼 : 호버효과 */
+.Share_Sharebutton:hover {
+  border: 0.05cm solid #244F9E;
+}
+
+/* 메뉴바 */
+.Share_Nav {
+  position: fixed;
+  right: 0;
+  margin: -6% 5.7% 0 0;
+}
+
+/* 메뉴바 : 로그아웃 제외 */
+.Share_Diarylist,
+.Share_Calendar,
+.Share_Diary,
+.Share_Time,
+.Share_Mypage {
+  border-bottom: 0.04cm solid rgb(71, 71, 71);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* 메뉴바 : 공유 버튼 제외 */
+.Share_Diarylist,
+.Share_Calendar,
+.Share_Diary,
+.Share_Time,
+.Share_Mypage,
+.Share_Logout {
+  writing-mode: vertical-lr;
+  font-size: 15px;
+  letter-spacing: 5px;
+  background-color: white;
+  display: block;
+  padding: 20px 0 10px 0;
+}
+
+/* 메뉴 : 로그아웃 */
+.Share_Logout {
+  color: rgb(218, 55, 55);
+  border: none;
+}
+
+/* 메뉴바 로그아웃 제외 : 호버효과 */
+.Share_Diarylist:hover,
+.Share_Calendar:hover,
+.Share_Diary:hover,
+.Share_Time:hover,
+.Share_Mypage:hover,
+.Share_Logout:hover {
+  font-weight: bold;
+}
+
+/* Section */
+.Share_Section0 {
+  margin: 2% 0 5% 10%;
+  width: 80%;
+  padding-top: 0;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+.Share_Section {
+  width: 100%;
+}
+
+/* 왼쪽 내용 - 개인 정보 */
+.Share_Leftbox {
+  width: 20%;
+  margin-right: 5%;
+  float: left;
+  text-align: center;
+}
+
+/* 프로필 사진 */
+.Share_Img {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 70%;
+}
+
+/* 개인정보 */
+.Share_Profile {
+  text-align: center;
+  font-size: 0.7cm;
+  line-height: 1.5cm;
+}
+
+/* 오른쪽 내용 - 일지 목록 */
+.Share_Rightbox {
+  width: 60%;
+  float: left;
+  padding: 4% 4% 0 4%;
+  background-color: rgb(241, 241, 241, 0.5);
+}
+
+/* 활동 */
+.Share_Box {
+  margin-bottom: 10%;
+  border: none;
+}
+
+/* 카테고리 : 전체 / 교내활동 / 교외활동 / 자격증 / 어학 */
+.Share_Title {
+  width: 90%;
+  margin-bottom: 5%;
+  font-size: 0.7cm;
+  border: none;
+  font-weight: bold;
+  color: black;
+}
+
+/* 해당 카테고리의 내용 : 제목, 기간, 장소 등의 정보 */
+.Share_Content {
+  width: 90%;
+  margin-left: 10%;
+  margin-right: 5%;
+  font-size: 0.5cm;
+  border: none;
+}
+
+/* 카테고리의 내용 : 호버효과 */
+.Share_Content:hover {
+  color: #244F9E;
+  font-weight: bold;
+}
