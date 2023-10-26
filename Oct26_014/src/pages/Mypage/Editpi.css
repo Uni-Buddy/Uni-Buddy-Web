@@ -1,0 +1,389 @@
+/* 개인정보 수정 */
+
+/* 배경 */
+.Edit_Head {
+    width: 100%;
+    height: 200px;
+    opacity: 0.8;
+}
+
+/* 페이지 아이콘 : 큰 원 */
+.Edit_Bigcircle {
+    position: relative;
+    margin: -2% 0 0 15%;
+    width: 120px;
+    height: 120px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: -2px 3px 3px 0px gray;
+}
+
+/* 페이지 아이콘 : 작은 원 */
+.Edit_Smallcircle {
+    position: relative;
+    margin: -1.4% 0 2.5% 20.5%;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 100%;
+    border: 0.05cm solid rgb(148, 148, 148);
+}
+
+/* 페이지 아이콘 */
+.Edit_img {
+    position: relative;
+    margin: 20% 0 0 22%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+/* 페이지 아이콘 아래 단어 : 리스트 */
+.Edit_Iconwrite {
+    margin: 2% 0 0 16%;
+    font-size: 0.8cm;
+    font-weight: 600;
+}
+
+/*.profileimg {
+      margin-bottom: 10px;
+  }*/
+
+
+/* 메뉴바 */
+.My_Nav {
+    position: fixed;
+    right: 0;
+    margin: -6% 5% 0 0;
+}
+
+/* 메뉴바 : 스크롤 이동시 중앙 위치 */
+.My_Nav.fixed {
+    top: 0;
+    right: 0;
+    margin: 9% 5% 0 0;
+}
+
+/* 메뉴 : 로고 */
+.My_Logo {
+    display: block;
+    margin: -50% 0 2% -30%;
+    width: 60px;
+    height: 40px;
+}
+
+/* 메뉴 : 로고 & 로그아웃 제외 */
+.My_Diarylist,
+.My_Calendar,
+.My_Diary,
+.My_Time,
+.My_Mypage {
+    border-bottom: 0.04cm solid rgb(71, 71, 71);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* 메뉴 : 전부 */
+.My_Diarylist,
+.My_Calendar,
+.My_Diary,
+.My_Time,
+.My_Mypage,
+.My_Logout {
+    writing-mode: vertical-lr;
+    font-size: 15px;
+    letter-spacing: 5px;
+    background-color: white;
+    display: block;
+    padding: 20px 0 10px 0;
+}
+
+/* 메뉴 : 기록 */
+.My_Mypage {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 메뉴 : 로그아웃 */
+.My_Logout {
+    color: rgb(218, 55, 55);
+    border: none;
+}
+
+/* 메뉴 : 호버효과 */
+.My_Diarylist:hover,
+.My_Calendar:hover,
+.My_Diary:hover,
+.My_Time:hover,
+.My_Mypage:hover,
+.My_Logout:hover {
+    font-weight: bold;
+}
+
+.Edit_Section1 {
+    position: absolute;
+    left: 15%;
+    top: 45%;
+    width: 30%;
+}
+
+/* 이미지 미리보기 */
+.Edit_Imagepreview {
+    width: 60%;
+    border-radius: 70%;
+    margin-bottom: 5%;
+    object-fit: cover;
+}
+
+/* 이미지 업로드 */
+.Edit_Filechoose {
+    width: 50%;
+}
+
+/*---------------------------------*/
+
+/*input 수정 영역*/
+.Edit_Section2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-30%, -30%);
+    width: 35%;
+    flex-direction: column;
+}
+
+/*이름 인풋*/
+.Edit_name_input {
+    width: 50%;
+    height: 40px;
+    margin: 2% 0 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_name_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*이메일 인풋*/
+.Edit_email_input {
+    width: 50%;
+    height: 40px;
+    margin: 2% 0 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_email_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*대학교 인풋*/
+.Edit_univ_input {
+    width: 50%;
+    height: 40px;
+    margin: 2% 0 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_univ_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*휴대폰 번호 라벨*/
+.Edit_tel_label {
+    margin: 2% 1% 0 10%;
+    color: #787878;
+    font-size: small;
+}
+
+
+/*휴대폰 맨앞자리 인풋*/
+.Edit_tel1_input {
+    width: 25%;
+    height: 40px;
+    margin: 2% 1% 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_tel1_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*휴대폰 두번째자리 인풋*/
+.Edit_tel2_input {
+    width: 25%;
+    height: 40px;
+    margin: 2% 1% 3% 1%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_tel2_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*휴대폰 마지막자리 인풋*/
+.Edit_tel3_input {
+    width: 25%;
+    height: 40px;
+    margin: 2% 0 3% 1%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_tel3_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*생년월일 라벨*/
+.Edit_date_label {
+    margin: 2% 1% 0 10%;
+    color: #787878;
+    font-size: small;
+}
+
+/*생년월일 인풋*/
+.Edit_date_input {
+    width: 50%;
+    height: 40px;
+    margin: 2% 0 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_date_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*추가항목 텍스트*/
+.Edit_plus_h1 {
+    margin: 5% 0 5% 10%;
+}
+
+/*추가항목 제목 인풋*/
+.Edit_plus_title_input {
+    width: 20%;
+    height: 40px;
+    margin: 2% 0 3% 10%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_plus_title_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*추가항목 내용 인풋*/
+.Edit_plus_content_input {
+    width: 50%;
+    height: 40px;
+    margin: 2% 0 3% 5%;
+    border: none;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    font-size: medium;
+}
+
+.Edit_plus_content_input::placeholder {
+    color: #787878;
+    font-size: medium;
+}
+
+/*추가버튼*/
+.Edit_plus_check_button {
+    background: #244F9E;
+    border: 0.05cm solid #244F9E;
+    border: none;
+    color: white;
+    margin-left: 3%;
+}
+
+/* 추가 버튼 : 호버효과 */
+.Edit_plus_check_button:hover {
+    background: #19376d;
+    border: 0.05cm solid #19376d;
+    color: aliceblue;
+}
+
+/*추가된 정보 나열*/
+.Edit_plus_list {
+    margin: 0 0 3% 4%;
+}
+
+
+/*추가 삭제 버튼*/
+.Edit_plus_cancle_button {
+    background: #244F9E;
+    border: 0.05cm solid #244F9E;
+    border: none;
+    color: white;
+    margin-left: 3%;
+}
+
+/* 추가 삭제 버튼 : 호버효과 */
+.Edit_plus_cancle_button:hover {
+    background: #19376d;
+    border: 0.05cm solid #19376d;
+    color: aliceblue;
+}
+
+
+/*---------------------------------*/
+
+/* 버튼 영역 */
+.Edit_Aside {
+
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+/* 저장, 취소 버튼 */
+.Edit_Button {
+    margin-left: 5%;
+    text-align: center;
+    width: 160px;
+    height: 35px;
+    font-size: 20px;
+    color: black;
+    border: 0.04cm solid black;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* 저장, 취소 버튼 호버 */
+.Edit_Button:hover {
+    background: #244F9E;
+    border: none;
+    color: aliceblue;
+}

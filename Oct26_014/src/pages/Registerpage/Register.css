@@ -1,0 +1,162 @@
+/* 회원가입 페이지 */
+
+/*전체 영역*/
+.Rgst {
+    background-color: rgb(241, 241, 241, 0.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    flex-direction: column;
+    border-radius: 15px;
+
+}
+
+/*회원가입 텍스트*/
+.Rgst_h3 {
+    margin: 10% 0 10% 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+/*-------------------------------------*/
+
+/*이메일 라벨*/
+.Rgst_email_label {
+    margin-left: 10%;
+}
+
+/*이메일 인풋*/
+.Rgst_email_input {
+    width: 80%;
+    height: 40px;
+    margin: 2% 0 1% 10%;
+    border-radius: 30px;
+    border-color: #868686;
+}
+
+/*이메일 에러 메세지*/
+.Rgst_email_input_error {
+    color: red;
+    margin: 0 0 3% 10%;
+    font-size: small;
+}
+
+/*-------------------------------------*/
+
+/*비밀번호 라벨*/
+.Rgst_pw_label {
+    margin-left: 10%;
+}
+
+/*비밀번호 인풋*/
+.Rgst_pw_input {
+    width: 80%;
+    height: 40px;
+    margin: 2% 0 1% 10%;
+    border-radius: 30px;
+    border-color: #868686;
+}
+
+/*비밀번호 에러 메세지*/
+.Rgst_pw_input_error {
+    color: red;
+    margin: 0 0 3% 10%;
+    font-size: small;
+}
+
+/*-------------------------------------*/
+
+/*비밀번호 확인 라벨*/
+.Rgst_pwc_label {
+    margin-left: 10%;
+}
+
+/*비밀번호 확인 인풋*/
+.Rgst_pwc_input {
+    width: 80%;
+    height: 40px;
+    margin: 2% 0 1% 10%;
+    border-radius: 30px;
+    border-color: #868686;
+}
+
+/*비밀번호 확인 에러 메세지*/
+.Rgst_pwc_input_error {
+    color: red;
+    margin: 0 0 3% 10%;
+    font-size: small;
+}
+
+/*-------------------------------------*/
+
+/*비밀번호 보이기/숨기기*/
+.Rgst_pwshow_input {
+    margin: 1% 0 1% 10%;
+}
+
+
+/*이름 라벨*/
+.Rgst_name_label {
+    margin-left: 10%;
+}
+
+/*이름 인풋*/
+.Rgst_name_input {
+    width: 80%;
+    height: 40px;
+    margin: 2% 0 1% 10%;
+    border-radius: 30px;
+    border-color: #868686;
+}
+
+/*이름 에러 메세지*/
+.Rgst_name_input_error {
+    color: red;
+    margin: 0 0 3% 10%;
+    font-size: small;
+}
+
+/*-------------------------------------*/
+
+/*대학교 라벨*/
+.Rgst_univ_label {
+    margin-left: 10%;
+}
+
+/*대학교 인풋*/
+.Rgst_univ_input {
+    width: 80%;
+    height: 40px;
+    margin: 2% 0 1% 10%;
+    border-radius: 30px;
+    border-color: #868686;
+}
+
+/*대학교 에러 메세지*/
+.Rgst_univ_input_error {
+    color: red;
+    margin: 0 0 3% 10%;
+    font-size: small;
+}
+
+/*-------------------------------------*/
+
+/*회원가입 버튼*/
+.Rgst_button {
+    width: 80%;
+    height: 40px;
+    margin: 3% 0 10% 11%;
+    border-radius: 30px;
+    background-color: #244F9E;
+    border: none;
+    color: white;
+}
+
+/* 회원가입 버튼 : 호버효과 */
+.Rgst_button:hover {
+    background: #19376d;
+    border: 0.05cm solid #19376d;
+    color: aliceblue;
+}
