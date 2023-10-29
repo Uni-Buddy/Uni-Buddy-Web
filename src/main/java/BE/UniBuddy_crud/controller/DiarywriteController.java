@@ -66,19 +66,6 @@ public class DiarywriteController {
         return diarywriteRepository. findByTitle(title);
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<DiarywriteDto> getById(@PathVariable Long id) {
-//        Optional<Diarywrite> diarywrite = diarywriteRepository.findById(id);
-//        if (diarywrite.isPresent()) {
-//            // 엔티티를 DTO로 변환하여 반환
-//            DiarywriteDto diarywriteDto = DiarywriteDto.fromEntity(diarywrite.get());
-//            return ResponseEntity.ok(diarywriteDto);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-
-
     @DeleteMapping("/delete/{title}") //일지 삭제
     @Transactional
     public ResponseEntity<String> deleteByTitle(@PathVariable String title) {
