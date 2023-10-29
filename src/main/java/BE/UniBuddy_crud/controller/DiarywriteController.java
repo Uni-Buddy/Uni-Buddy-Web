@@ -4,11 +4,9 @@ package BE.UniBuddy_crud.controller;
 import BE.UniBuddy_crud.domain.Diarywrite;
 import BE.UniBuddy_crud.domain.Users;
 import BE.UniBuddy_crud.dto.DiarywriteDto;
-import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.repository.DiarywriteRepository;
 import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.DiarywriteService;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController

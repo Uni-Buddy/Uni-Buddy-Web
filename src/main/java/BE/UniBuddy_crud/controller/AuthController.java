@@ -1,10 +1,8 @@
 package BE.UniBuddy_crud.controller;
 
-import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.dto.SignupDto;
 import BE.UniBuddy_crud.repository.UsersRepository;
 import BE.UniBuddy_crud.service.AuthService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
