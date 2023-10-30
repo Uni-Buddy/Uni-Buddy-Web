@@ -2,7 +2,6 @@ package BE.UniBuddy_crud.handler.impl;
 
 import BE.UniBuddy_crud.dao.GoalDAO;
 import BE.UniBuddy_crud.domain.Goal;
-import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.handler.GoalDataHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

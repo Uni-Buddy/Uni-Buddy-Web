@@ -45,6 +45,7 @@ public class Goal {
     public Users getId() {
         return id;
     }
+
     public int getGoal_num() {
         return goal_num;
     }

@@ -28,9 +28,9 @@ public class GoalController {
         int goal_num = goalDto.getGoal_num();
         String goal_content = goalDto.getGoal_content();
         LocalDate month = LocalDate.now();
-        Users users_id = goalDto.getUsers_id();
+        Users id = goalDto.getUsers_id();
 
-        return goalService.saveGoal(goal_num, goal_content, month, users_id);
+        return goalService.saveGoal(goal_num, goal_content, month, id);
     }
 
     @DeleteMapping(value = "/goals/{goal_num}")

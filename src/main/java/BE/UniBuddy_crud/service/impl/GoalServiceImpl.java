@@ -23,9 +23,9 @@ public class GoalServiceImpl implements GoalService {
     }
 
     @Override
-    public GoalDto saveGoal(int goalNum, String goalContent, LocalDate currentDate, Users users_id) {
+    public GoalDto saveGoal(int goalNum, String goalContent, LocalDate currentDate, Users id) {
 
-        Goal goal = new Goal(goalNum, currentDate, goalContent, users_id);
+        Goal goal = new Goal(goalNum, currentDate, goalContent, id);
         goalDataHandler.save(goal);
 
         return convertToGoalDto(goal);

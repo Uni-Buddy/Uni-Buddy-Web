@@ -23,7 +23,7 @@ public class ScheduleDto {
     private LocalDate day;
     private int month;
     private String add_content;
-    private Users users_id;
+    private Users id;
 
     public int getMonth() {
         return month;
@@ -34,11 +34,11 @@ public class ScheduleDto {
     }
 
     public Users getUsers_id() {
-        return users_id;
+        return id;
     }
 
-    public void setUsers_id(Users users_id) {
-        this.users_id = users_id;
+    public void setUsers_id(Users id) {
+        this.id = id;
     }
 
     public int getCal_num() {

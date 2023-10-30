@@ -4,6 +4,7 @@ package BE.UniBuddy_crud.controller;
 import BE.UniBuddy_crud.domain.Diarywrite;
 import BE.UniBuddy_crud.domain.Users;
 import BE.UniBuddy_crud.dto.DiarywriteDto;
+import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.repository.DiarywriteRepository;
 import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.DiarywriteService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 @CrossOrigin(origins = "*")
@@ -33,27 +35,17 @@ public class DiarywriteController {
         this.authService = authService;
     }
 
-@PostMapping("/add/{id}") //일지 작성
-    public String add(@PathVariable("id") Long id, @RequestBody DiarywriteDto diarywriteDto) {
-    Diarywrite diarywrite = diarywriteDto.toEntity();
+@PostMapping(value = "/add") //일지 작성
+    public DiarywriteDto write(@RequestBody DiarywriteDto diarywriteDto){
+    String act_name = diarywriteDto.getAct_name();
+    String title = diarywriteDto.getTitle();
+    String agency_name = diarywriteDto.getAgency_name();
+    String content = diarywriteDto.getContent();
+    Date term = diarywriteDto.getTerm();
+    Users id = diarywriteDto.getId();
+    int act_id = diarywriteDto.getAct_id();
 
-    // 수정: DiarywriteDto에서 받은 문자열 형태의 날짜를 Date로 변환
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    Date termDate = null;
-    try {
-        termDate = dateFormat.parse(dateFormat.format(diarywriteDto.getTerm())); // 날짜를 문자열로 변환하여 다시 파싱
-    } catch (ParseException e) {
-        e.printStackTrace();
-    }
-    diarywrite.setTerm(termDate);
-
-
-    // 사용자 ID를 설정
-    Users user = authService.findById(id); // 사용자 정보 가져오기
-    diarywrite.setUsers(user);
-
-    diarywriteService.write(diarywrite);
-    return "gg";
+    return diarywriteService.saveDiarywrite(act_id,act_name,title, agency_name,content,term, id);
 }
 
 

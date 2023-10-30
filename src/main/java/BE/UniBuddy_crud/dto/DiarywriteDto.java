@@ -1,6 +1,7 @@
 package BE.UniBuddy_crud.dto;
 
 import BE.UniBuddy_crud.domain.Diarywrite;
+import BE.UniBuddy_crud.domain.Users;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,14 +13,24 @@ import java.util.Date;
 @ToString
 @Builder
 public class DiarywriteDto {
+    private int act_id;
     private String act_name;
     private String title;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date term;
+    private  Date term;
 
-    private String agency_name;
-    private String content;
+    private  String agency_name;
+    private  String content;
+    private  Users id;
+
+    public int getAct_id() {
+        return act_id;
+    }
+
+    public void setAct_id(int act_id) {
+        this.act_id = act_id;
+    }
 
     public String getAct_name() {
         return act_name;
@@ -61,23 +72,12 @@ public class DiarywriteDto {
         this.content = content;
     }
 
-    public Diarywrite toEntity() {
-        return Diarywrite.builder()
-                .act_name(act_name)
-                .title(title)
-                .term(term)
-                .agency_name(agency_name)
-                .content(content)
-                .build();
+    public Users getId() {
+        return id;
     }
 
-    public static DiarywriteDto fromEntity(Diarywrite diarywrite) {
-        DiarywriteDto dto = new DiarywriteDto();
-        dto.setAct_name(diarywrite.getAct_name());
-        dto.setTitle(diarywrite.getTitle());
-        dto.setTerm(diarywrite.getTerm());
-        dto.setAgency_name(diarywrite.getAgency_name());
-        dto.setContent(diarywrite.getContent());
-        return dto;
+    public void setId(Users id) {
+        this.id = id;
     }
+
 }

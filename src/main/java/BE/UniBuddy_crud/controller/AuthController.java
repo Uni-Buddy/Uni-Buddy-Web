@@ -13,7 +13,6 @@ import BE.UniBuddy_crud.domain.Users;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")

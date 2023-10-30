@@ -19,14 +19,14 @@ public class ScoreDto {
     private int semester;
     private float avg_score;
     private int get_score;
-    private Users users_id;
+    private Users id;
 
     public Users getUsers_id() {
-        return users_id;
+        return id;
     }
 
-    public void setUsers_id(Users users_id) {
-        this.users_id = users_id;
+    public void setUsers_id(Users id) {
+        this.id = id;
     }
 
     public int getSemester() {

@@ -27,9 +27,9 @@ public class ScoreServiceImpl implements ScoreService {
         int semester = scoreDto.getSemester();
         float avg_score = scoreDto.getAvg_score();
         int get_score = scoreDto.getGet_score();
-        Users users_id = scoreDto.getUsers_id();
+        Users id = scoreDto.getUsers_id();
         //time_score를 저장
-        Time_score time_score = scoreDataHandler.saveTime_score(semester, avg_score, get_score, users_id);
+        Time_score time_score = scoreDataHandler.saveTime_score(semester, avg_score, get_score, id);
 
         // 정보 추출
         scoreDto.setSemester(time_score.getSemester());

@@ -23,7 +23,7 @@ public class GoalDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate month;
     private String goal_content;
-    private Users users_id;
+    private Users id;
 
     public LocalDate getMonth() {
         return month;
@@ -50,11 +50,11 @@ public class GoalDto {
     }
 
     public Users getUsers_id() {
-        return users_id;
+        return id;
     }
 
     public void setUsers_id(Users id) {
-        this.users_id = id;
+        this.id = id;
     }
 
 }

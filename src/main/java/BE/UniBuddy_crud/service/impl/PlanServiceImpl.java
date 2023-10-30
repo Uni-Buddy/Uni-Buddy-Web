@@ -28,13 +28,13 @@ public class PlanServiceImpl implements PlanService {
         String add_content = scheduleDto.getAdd_content();
         LocalDate day = scheduleDto.getDay();
         int month = scheduleDto.getMonth();
-        Users users_id = scheduleDto.getUsers_id();
+        Users id = scheduleDto.getUsers_id();
 
         Calendar calendar = new Calendar();
         calendar.setAdd_content(add_content);
         calendar.setDay(day);
         calendar.setMonth(month);
-        calendar.setId(users_id);
+        calendar.setId(id);
 
         calendar = planDataHandler.saveDayPlan(calendar);
 

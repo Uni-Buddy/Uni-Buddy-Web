@@ -6,7 +6,7 @@ import BE.UniBuddy_crud.dto.GoalDto;
 import java.time.LocalDate;
 
 public interface GoalService {
-    GoalDto saveGoal(int goalNum, String goalContent, LocalDate currentDate, Users users_id);
+    GoalDto saveGoal(int goalNum, String goalContent, LocalDate currentDate, Users id);
 
     boolean deleteGoal(Integer goalNum);
 
