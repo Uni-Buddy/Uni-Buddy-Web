@@ -43,22 +43,6 @@ public class Users {
 
     private String new_password;
 
-    @Builder
-    public Users(String email, String name, String password, String university) {
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.university = university;
-    }
-
-    public static Users create(String email, String name, String password, String university) {
-        Users users = new Users();
-        users.setEmail(email);
-        users.setName(name);
-        users.setPassword(password);
-        users.setUniversity(university);
-        return users;
-    }
 
     public Long getId() {
         return id;

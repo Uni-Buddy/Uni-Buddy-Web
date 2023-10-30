@@ -21,12 +21,18 @@ public class Diarywrite {
     @Column(nullable = false)
     private int act_id;
 
+    @Column(nullable = false)
     private String act_name;
+
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private Date term;
 
+    @Column(nullable = false)
     private String agency_name;
+
     private String content;
 
     @ManyToOne
