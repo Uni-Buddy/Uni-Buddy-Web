@@ -2,7 +2,6 @@ package BE.UniBuddy_crud.dto;
 
 import BE.UniBuddy_crud.domain.Users;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.List;

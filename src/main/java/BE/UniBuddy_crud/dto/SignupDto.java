@@ -3,7 +3,6 @@ package BE.UniBuddy_crud.dto;
 import BE.UniBuddy_crud.domain.Users;
 import lombok.*;
 
-import javax.persistence.Column;
 
 @Data
 @NoArgsConstructor

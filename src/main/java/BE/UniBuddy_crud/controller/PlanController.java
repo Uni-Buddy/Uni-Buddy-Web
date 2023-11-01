@@ -1,7 +1,6 @@
 package BE.UniBuddy_crud.controller;
 
 import BE.UniBuddy_crud.domain.Calendar;
-import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.dto.ScheduleDto;
 import BE.UniBuddy_crud.service.PlanService;
 import org.springframework.beans.factory.annotation.Autowired;

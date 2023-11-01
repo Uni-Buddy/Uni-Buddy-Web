@@ -4,7 +4,6 @@ package BE.UniBuddy_crud.controller;
 import BE.UniBuddy_crud.domain.Diarywrite;
 import BE.UniBuddy_crud.domain.Users;
 import BE.UniBuddy_crud.dto.DiarywriteDto;
-import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.repository.DiarywriteRepository;
 import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.DiarywriteService;
@@ -13,9 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 @CrossOrigin(origins = "*")
@@ -47,7 +43,6 @@ public class DiarywriteController {
 
     return diarywriteService.saveDiarywrite(act_id,act_name,title, agency_name,content,term, id);
 }
-
 
     @GetMapping("/{title}") //일지 조회 1개
     public Diarywrite getDiary(@PathVariable String title) {

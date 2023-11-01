@@ -1,6 +1,5 @@
 package BE.UniBuddy_crud.dto;
 
-import BE.UniBuddy_crud.domain.Diarywrite;
 import BE.UniBuddy_crud.domain.Users;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;

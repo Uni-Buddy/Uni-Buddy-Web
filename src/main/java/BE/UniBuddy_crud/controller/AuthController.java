@@ -6,7 +6,6 @@ import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.InfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +38,6 @@ public class AuthController {
         Users userEntity = authService.register(users);
         return "index";
     }
-
 
     @PostMapping("/login") //로그인
     public String login(@RequestParam String email, @RequestParam String password, Model model) {
@@ -82,7 +80,7 @@ public class AuthController {
 
     }
 
-    @PostMapping("/info")
+    @PostMapping("/info") //마이페이지 정보 추가
     public ResponseEntity<SignupDto> addInfo(@RequestBody SignupDto signupDto) {
         String hash = signupDto.getHash();
         String sns = signupDto.getSns();
@@ -118,9 +116,4 @@ public class AuthController {
         signupDto.setPhone(user.getPhone());
         return signupDto;
     }
-
-//
-//        SignupDto result = infoService.addInfo(hash, sns, education, phone, id);
-//        return result;
     }
-
