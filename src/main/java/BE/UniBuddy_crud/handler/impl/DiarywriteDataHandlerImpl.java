@@ -22,8 +22,5 @@ public class DiarywriteDataHandlerImpl implements DiarywriteDataHandler {
     public void save(Diarywrite diarywrite) {
         diarywriteDAO.saveDiarywrite(diarywrite);
     }
-//    @Override
-//    public Diarywrite findByAct_id(Integer act_id) {
-//        return diarywriteDAO.getDiarywrite(act_id);
-//    }
+
 }

@@ -3,8 +3,10 @@ package BE.UniBuddy_crud.controller;
 import BE.UniBuddy_crud.dto.SignupDto;
 import BE.UniBuddy_crud.repository.UsersRepository;
 import BE.UniBuddy_crud.service.AuthService;
+import BE.UniBuddy_crud.service.InfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import BE.UniBuddy_crud.domain.Users;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -19,12 +22,14 @@ import javax.servlet.http.HttpSession;
 public class AuthController {
 
     private final AuthService authService;
+    private final InfoService infoService;
 
     private final UsersRepository usersRepository;
 
     @Autowired
-    public AuthController(AuthService authService, UsersRepository usersRepository) {
+    public AuthController(AuthService authService, InfoService infoService, UsersRepository usersRepository) {
         this.authService = authService;
+        this.infoService = infoService;
         this.usersRepository = usersRepository;
     }
 
@@ -77,4 +82,45 @@ public class AuthController {
 
     }
 
-}
+    @PostMapping("/info")
+    public ResponseEntity<SignupDto> addInfo(@RequestBody SignupDto signupDto) {
+        String hash = signupDto.getHash();
+        String sns = signupDto.getSns();
+        String education = signupDto.getEducation();
+        String phone = signupDto.getPhone();
+        Long id = signupDto.getId();
+
+        Optional<Users> userOptional = usersRepository.findById(id);
+
+        if (userOptional.isPresent()) {
+            Users user = userOptional.get();
+
+            user.setHash(hash);
+            user.setSns(sns);
+            user.setEducation(education);
+            user.setPhone(phone);
+
+            usersRepository.save(user);
+
+            SignupDto updatedSignupDto = convertToSignupDto(user);
+            return ResponseEntity.ok(updatedSignupDto);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    private SignupDto convertToSignupDto(Users user) {
+        SignupDto signupDto = new SignupDto();
+        signupDto.setId(user.getId());
+        signupDto.setHash(user.getHash());
+        signupDto.setSns(user.getSns());
+        signupDto.setEducation(user.getEducation());
+        signupDto.setPhone(user.getPhone());
+        return signupDto;
+    }
+
+//
+//        SignupDto result = infoService.addInfo(hash, sns, education, phone, id);
+//        return result;
+    }
+

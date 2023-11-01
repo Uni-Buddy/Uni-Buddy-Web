@@ -2,15 +2,21 @@
 package BE.UniBuddy_crud.service;
 
 import BE.UniBuddy_crud.domain.Users;
+import BE.UniBuddy_crud.dto.DiarywriteDto;
+import BE.UniBuddy_crud.dto.SignupDto;
 import BE.UniBuddy_crud.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class AuthService {
 
-    private final UsersRepository usersRepository;
+    private static UsersRepository usersRepository;
+
 
     public Users register(Users users) { //회원가입
         Users userEntity = usersRepository.save(users);

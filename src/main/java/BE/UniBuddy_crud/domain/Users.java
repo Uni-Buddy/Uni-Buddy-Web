@@ -138,7 +138,7 @@ public class Users {
     private List<Goal> goalList = new ArrayList<>();
 
     @Builder
-    public Users(String email, String name, String password, String university) {
+    public Users(String email, String name, String password, String university, Long id) {
         this.email = email;
         this.name = name;
         this.password = password;
