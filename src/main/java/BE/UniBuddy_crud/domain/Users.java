@@ -2,6 +2,7 @@
 package BE.UniBuddy_crud.domain;
 
 import lombok.*;
+import lombok.Builder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -135,5 +136,13 @@ public class Users {
 
     @OneToMany(mappedBy = "id")
     private List<Goal> goalList = new ArrayList<>();
+
+    @Builder
+    public Users(String email, String name, String password, String university) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.university = university;
+    }
 }
 
