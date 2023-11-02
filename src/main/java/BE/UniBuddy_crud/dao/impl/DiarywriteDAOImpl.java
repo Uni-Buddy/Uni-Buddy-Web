@@ -25,8 +25,8 @@ public class DiarywriteDAOImpl implements DiarywriteDAO {
 
     @Override
     public Diarywrite getDiarywrite(String title) {
-        Diarywrite diarywrite = diarywriteRepository.getByTitle(title);
-        return null;
+        Diarywrite diarywrite = diarywriteRepository.findByTitle(title);
+        return diarywrite;
     }
 
 

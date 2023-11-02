@@ -9,4 +9,5 @@ public interface DiarywriteDAO {
 
     void deleteDiarywrite(Diarywrite DIarywrite);
 
+
 }

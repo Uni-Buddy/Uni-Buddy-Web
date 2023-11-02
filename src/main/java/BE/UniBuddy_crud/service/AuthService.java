@@ -15,8 +15,7 @@ import java.util.Optional;
 @Service
 public class AuthService {
 
-    private static UsersRepository usersRepository;
-
+    private final UsersRepository usersRepository;
 
     public Users register(Users users) { //회원가입
         Users userEntity = usersRepository.save(users);
@@ -24,14 +23,14 @@ public class AuthService {
     }
 
     public Users login(String email, String password) { //로그인
-        Users user = usersRepository.findByEmail(email);
+        Users users = usersRepository.findByEmail(email);
 
-        if (user != null && user.getPassword().equals(password)) {
-            return user;
+        if (users != null && users.getPassword().equals(password)) {
+            return users;
         }
-
         return null;
     }
+
 
     public Users findById(Long id) {
         return null;

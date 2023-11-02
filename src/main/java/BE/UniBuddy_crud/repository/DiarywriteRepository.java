@@ -8,6 +8,5 @@ public interface DiarywriteRepository extends JpaRepository<Diarywrite,Integer> 
 
     Diarywrite deleteByTitle(String title);
 
-    Diarywrite getByTitle(String title);
 }
 

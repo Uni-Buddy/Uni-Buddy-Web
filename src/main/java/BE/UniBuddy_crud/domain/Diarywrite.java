@@ -1,6 +1,7 @@
 
 package BE.UniBuddy_crud.domain;
 
+import BE.UniBuddy_crud.dto.DiarywriteDto;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -97,11 +98,22 @@ public class Diarywrite {
         this.content = content;
     }
 
-    public Users getId() {
+    public Users getUId() {
         return id;
     }
 
-    public void setId(Users id) {
+    public void setUId(Users id) {
         this.id = id;
     }
+
+    public DiarywriteDto convertToDto() {
+        DiarywriteDto dto = new DiarywriteDto();
+        dto.setAct_id(this.act_id);
+        dto.setTitle(this.title);
+        dto.setTerm(this.term);
+        dto.setAgency_name(this.agency_name);
+        dto.setContent(this.content);
+        return dto;
+    }
+
 }

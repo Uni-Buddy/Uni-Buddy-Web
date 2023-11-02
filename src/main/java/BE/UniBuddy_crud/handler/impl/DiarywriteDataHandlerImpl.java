@@ -23,4 +23,9 @@ public class DiarywriteDataHandlerImpl implements DiarywriteDataHandler {
         diarywriteDAO.saveDiarywrite(diarywrite);
     }
 
+    @Override
+    public Diarywrite getDDiarywrite(String title) {
+        return diarywriteDAO.getDiarywrite(title);
+    }
+
 }

@@ -10,6 +10,8 @@ import BE.UniBuddy_crud.service.DiarywriteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import BE.UniBuddy_crud.handler.DiarywriteDataHandler;
+
 
 import javax.transaction.Transactional;
 import java.util.Date;
@@ -31,23 +33,39 @@ public class DiarywriteController {
         this.authService = authService;
     }
 
-@PostMapping(value = "/add") //일지 작성
+    @PostMapping(value = "/add") //일지 작성
     public DiarywriteDto write(@RequestBody DiarywriteDto diarywriteDto){
-    String act_name = diarywriteDto.getAct_name();
-    String title = diarywriteDto.getTitle();
-    String agency_name = diarywriteDto.getAgency_name();
-    String content = diarywriteDto.getContent();
-    Date term = diarywriteDto.getTerm();
-    Users id = diarywriteDto.getId();
-    int act_id = diarywriteDto.getAct_id();
+        String act_name = diarywriteDto.getAct_name();
+        String title = diarywriteDto.getTitle();
+        String agency_name = diarywriteDto.getAgency_name();
+        String content = diarywriteDto.getContent();
+        Date term = diarywriteDto.getTerm();
+        Users id = diarywriteDto.getId();
+        int act_id = diarywriteDto.getAct_id();
 
-    return diarywriteService.saveDiarywrite(act_id,act_name,title, agency_name,content,term, id);
+        return diarywriteService.saveDiarywrite(act_id,act_name,title, agency_name,content,term, id);
+    }
+
+@GetMapping(value = "/diary/{title}")
+public ResponseEntity<?> getDiarywrite(@PathVariable String title) {
+    try {
+        DiarywriteDto diarywriteDto = diarywriteService.ggetDiarywrite(title);
+
+        if (diarywriteDto != null) {
+            return ResponseEntity.ok(diarywriteDto);
+        } else {
+            // 일지를 찾을 수 없음
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("일지를 찾을 수 없음");
+        }
+    } catch (NullPointerException e) {
+        // diarywriteDto가 null이라면 예외 처리
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("일지를 찾을 수 없음");
+    } catch (Exception e) {
+        // 다른 예외 처리
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류");
+    }
 }
 
-    @GetMapping("/{title}") //일지 조회 1개
-    public Diarywrite getDiary(@PathVariable String title) {
-        return diarywriteRepository. findByTitle(title);
-    }
 
     @DeleteMapping("/delete/{title}") //일지 삭제
     @Transactional
@@ -64,12 +82,12 @@ public class DiarywriteController {
         } catch (Exception e) {
             // 예외 처리 추가
             e.printStackTrace(); // 또는 로깅으로 변경해도 됩니다.
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("삭제 됨");
         }
     }
 
 
 
-}
 
+}
 

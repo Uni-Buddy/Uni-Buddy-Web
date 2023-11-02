@@ -4,6 +4,7 @@ import BE.UniBuddy_crud.dto.SignupDto;
 import BE.UniBuddy_crud.repository.UsersRepository;
 import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.InfoService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,24 +40,54 @@ public class AuthController {
         return "index";
     }
 
-    @PostMapping("/login") //로그인
-    public String login(@RequestParam String email, @RequestParam String password, Model model) {
-        Users user = authService.login(email, password);
+    @PostMapping("/login")
+    public ResponseEntity<Object> login(@RequestBody Users user) {
+        String email = user.getEmail();
+        String password = user.getPassword();
 
-        if (user != null) {
+        if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+            return ResponseEntity.badRequest().body("Email and password are required");
+        }
+
+        Users authenticatedUser = authService.login(email, password);
+
+        if (authenticatedUser != null) {
             // 로그인 성공
-            model.addAttribute("user", user);
-            return "Test"; // 로그인 성공 페이지로 이동
+            return ResponseEntity.ok("성공");
         } else {
             // 로그인 실패
-            model.addAttribute("error", "Invalid email or password");
-            return "loginPage"; // 로그인 페이지로 이동 (로그인 실패 메시지 표시)
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
     }
 
-    @GetMapping("/{email}") //유저 정보 조회
-    public Users getUserByName(@PathVariable String email) {
-        return usersRepository.findByEmail(email);
+
+
+
+
+
+
+
+    private SignupDto convertToUsersDto(Users user) {
+        SignupDto userDto = new SignupDto();
+        userDto.setEmail(user.getEmail());
+        userDto.setPassword(user.getPassword());
+
+        return userDto;
+    }
+
+
+
+    @GetMapping(value="/{email}")
+    public SignupDto getUserByName(@PathVariable String email) {
+        Users user = usersRepository.findByEmail(email);
+        if (user != null) {
+            SignupDto userDto = new SignupDto();
+            BeanUtils.copyProperties(user, userDto);
+            return userDto;
+        } else {
+        // 사용자가 없는 경우 처리
+            return null;
+        }
     }
 
     @DeleteMapping("/delete/{email}")
@@ -116,4 +147,4 @@ public class AuthController {
         signupDto.setPhone(user.getPhone());
         return signupDto;
     }
-    }
+}

@@ -18,8 +18,9 @@ public class SignupDto {
     private String sns;
     private String education;
     private String phone;
-    private String new_password;
+    private String new_pw;
     private Long id;
+    private String message;
 
     public Long getId() {
         return id;
@@ -62,11 +63,11 @@ public class SignupDto {
     }
 
     public String getNew_password() {
-        return new_password;
+        return new_pw;
     }
 
     public void setNew_password(String new_password) {
-        this.new_password = new_password;
+        this.new_pw = new_pw;
     }
 
     public String getName() {
@@ -108,6 +109,14 @@ public class SignupDto {
                 .email(email)
                 .university(university)
                 .build();
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
 

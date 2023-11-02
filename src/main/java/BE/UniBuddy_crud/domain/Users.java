@@ -1,6 +1,7 @@
 
 package BE.UniBuddy_crud.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.Builder;
 
@@ -42,8 +43,17 @@ public class Users {
     @Column
     private String phone;
 
-    private String new_password;
+    @Column
+    private String new_pw;
 
+
+    public String getNew_pw() {
+        return new_pw;
+    }
+
+    public void setNew_pw(String new_pw) {
+        this.new_pw = new_pw;
+    }
 
     public Long getId() {
         return id;
@@ -117,25 +127,18 @@ public class Users {
         this.phone = phone;
     }
 
-    public String getNew_password() {
-        return new_password;
-    }
-
-    public void setNew_password(String new_password) {
-        this.new_password = new_password;
-    }
-
-    @OneToMany(mappedBy = "id")
-    private List<Calendar> calendarList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "id")
-    private List<Diarywrite> diarywriteList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "id")
-    private List<Time_score> timeScoreList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "id")
-    private List<Goal> goalList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "id")
+//    private List<Calendar> calendarList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "id")
+//    private List<Diarywrite> diarywriteList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "id")
+//    private List<Time_score> timeScoreList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "id")
+//    private List<Goal> goalList = new ArrayList<>();
 
     @Builder
     public Users(String email, String name, String password, String university, Long id) {
