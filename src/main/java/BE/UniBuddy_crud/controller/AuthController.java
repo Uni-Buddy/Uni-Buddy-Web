@@ -14,6 +14,7 @@ import BE.UniBuddy_crud.domain.Users;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*")
@@ -40,7 +41,7 @@ public class AuthController {
         return "index";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login") //로그인
     public ResponseEntity<Object> login(@RequestBody Users user) {
         String email = user.getEmail();
         String password = user.getPassword();
@@ -60,13 +61,6 @@ public class AuthController {
         }
     }
 
-
-
-
-
-
-
-
     private SignupDto convertToUsersDto(Users user) {
         SignupDto userDto = new SignupDto();
         userDto.setEmail(user.getEmail());
@@ -75,9 +69,7 @@ public class AuthController {
         return userDto;
     }
 
-
-
-    @GetMapping(value="/{email}")
+    @GetMapping(value="/{email}") //email로 개인정보 조회
     public SignupDto getUserByName(@PathVariable String email) {
         Users user = usersRepository.findByEmail(email);
         if (user != null) {
@@ -111,7 +103,7 @@ public class AuthController {
 
     }
 
-    @PostMapping("/info") //마이페이지 정보 추가
+    @PostMapping("/info") //마이페이지 정보 추가 , hash,sns,education,phone,id 입력받음
     public ResponseEntity<SignupDto> addInfo(@RequestBody SignupDto signupDto) {
         String hash = signupDto.getHash();
         String sns = signupDto.getSns();
@@ -147,4 +139,33 @@ public class AuthController {
         signupDto.setPhone(user.getPhone());
         return signupDto;
     }
+
+    @PutMapping("/info/changePW/{email}") //비밀번호 변경 , email, password, new_pw 입력받음
+    public ResponseEntity<String> changePassword(
+            @PathVariable String email,
+            @RequestBody Map<String, String> requestBody
+    ) {
+        Users user = usersRepository.findByEmail(email);
+
+        if (user != null) {
+            String newPassword = requestBody.get("new_pw"); // 새로운 비밀번호
+            String currentPassword = requestBody.get("password"); // 현재 비밀번호
+
+            if (currentPassword != null && currentPassword.equals(user.getPassword())) {
+                // 현재 비밀번호 일치
+                user.setPassword(newPassword); // 새로운 비밀번호로 업데이트
+                usersRepository.save(user); // 업데이트된 비밀번호 저장
+                return ResponseEntity.ok("Password changed successfully");
+            } else {
+                // 현재 비밀번호 불일치
+                return ResponseEntity.badRequest().body("Invalid current password");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Invalid email");
+        }
+    }
+
+
+
+
 }
