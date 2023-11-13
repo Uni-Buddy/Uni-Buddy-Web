@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.plan.model.dao.PlanMapper">
+    <select id="getSchedulesToMonth" parameterType="com.unibuddy.be.plan.model.dto.CalendarDTO" resultType="com.unibuddy.be.plan.model.dto.CalendarDTO">
+        select
+            cal_num as calNum
+             , `year`
+             , `month`
+             , `day`
+             , add_content as addContent
+             , users_id as usersId
+        from calendar
+        where `year` = #{year}
+        and `month` = #{month}
+        and users_id = #{usersId}
+    </select>
+
+    <select id="getSchedulesToMonthAndDay" parameterType="com.unibuddy.be.plan.model.dto.CalendarDTO" resultType="com.unibuddy.be.plan.model.dto.CalendarDTO">
+        select
+            cal_num as calNum
+             , `year`
+             , `month`
+             , `day`
+             , add_content as addContent
+             , users_id as usersId
+        from calendar
+        where `month` = #{month}
+          and `day` = #{day}
+          and users_id = #{usersId}
+    </select>
+
+    <insert id="saveSchedules" parameterType="com.unibuddy.be.plan.model.dto.CalendarDTO">
+        insert into calendar (cal_num, `year`, `month`, `day`, add_content, users_id)
+        values (#{calNum}, #{year}, #{month}, #{day}, #{addContent}, #{usersId})
+    </insert>
+
+    <update id="updateSchedules" parameterType="com.unibuddy.be.plan.model.dto.CalendarDTO">
+        update calendar
+        set add_content = #{addContent}
+        where users_id = #{usersId}
+        and `year` = #{year}
+        and `month` = #{month}
+        and `day` = #{day}
+    </update>
+
+    <delete id="deleteSchedules" parameterType="Integer">
+        delete from calendar where cal_num = #{calNum}
+    </delete>
+</mapper>

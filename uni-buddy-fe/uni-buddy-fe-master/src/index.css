@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.Toastify__toast {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.MuiAlert-root {
+  align-items: center;
+}
+
+.MuiAlert-message {
+  white-space: pre-line;
+}
+
+/* 학점정보 학기 슬라이더 */
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
+.slick-next:before {
+  content: '>' !important;
+}
+
+.slick-prev:before {
+  content: '<' !important;
+}
+
+.slick-dots > li {
+  width: 10px !important;
+}
+.slick-dots > li > button {
+  width: 10px !important;
+}
+
+/* 학점정보 시간표 */
+/* 모든 행 넓이 같게 */
+.table-wrapper > div > div > div {
+  grid-template-columns: repeat(6, 1fr) !important;
+  z-index: 0 !important;
+}
+/* 헤더의 day 숨김 */
+.rs__header > div > p:nth-child(1) {
+  display: none;
+}
+/* 헤더 요일 */
+.rs__header > div > p:nth-child(2) {
+  text-align: center;
+  font-size: 1rem !important;
+  margin-top: 9px;
+}
+
+/* 시간영역 */
+.rs__cell.rs__header.rs__time {
+  z-index: 0 !important;
+}
+
+/* 당일 강조 제거*/
+.rs__today_cell .MuiTypography-body1 {
+  color: black;
+  font-weight: normal !important;
+}
+
+/* 현재시간 표시 라인 제거 */
+.rs__cell.rs__today_cell > div:nth-child(1) {
+  display: none;
+}
+.rs__cell.rs__header.rs__today_cell > div:nth-child(1) {
+  display: block;
+}

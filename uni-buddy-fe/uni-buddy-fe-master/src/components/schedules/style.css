@@ -1,0 +1,29 @@
+.fc-daygrid-day-number {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+
+.fc-day-today {
+  .fc-daygrid-day-number {
+    color: #fff !important;
+    background-color: rgb(27, 117, 208);
+    border-radius: 50%;
+  }
+}
+
+.fc .fc-daygrid-day-top {
+  height: 30px !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fc-direction-ltr .fc-daygrid-more-link {
+  /* float center */
+  font-weight: 700;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+  margin-bottom: -18px;
+}

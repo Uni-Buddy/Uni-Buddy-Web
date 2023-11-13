@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.subject.model.dao.SubjectMapper">
+    <select id="getSubjectForTheSemester" parameterType="Integer" resultType="com.unibuddy.be.subject.model.dto.TimeSubjectDTO">
+        select `sub_num`    as subNum
+             , `sub_name`   as subName
+             , `pro_name`   as proName
+             , `classroom`
+             , `date`
+             , `start_time` as startTime
+             , `end_time`   as endTime
+             , `color`
+             , `semester`
+        from time_subject
+        where `semester` = #{semester}
+    </select>
+
+    <insert id="saveSubjectForTheSemester" parameterType="com.unibuddy.be.subject.model.dto.TimeSubjectDTO">
+        INSERT INTO time_subject (sub_name, pro_name, classroom, `date`, start_time, end_time, color, semester)
+        VALUES (#{subNum}, #{proName}, #{classroom}, #{date}, #{startTime}, #{endTime}, #{color}, #{semester})
+    </insert>
+
+    <delete id="deleteSubjectForTheSemester" parameterType="Integer">
+        delete from time_subject where sub_num = #{subNum}
+    </delete>
+</mapper>

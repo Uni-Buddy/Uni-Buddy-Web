@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.diary.model.dao.DiaryWriteMapper">
+    <insert id="saveDiaryWrite" parameterType="com.unibuddy.be.diary.model.dto.DiaryWriteDTO">
+        insert into diary_write (act_id, title, act_name, agency_name, term, content, users_id, start_date, end_date, reg_date)
+        values (#{actId}, #{title}, #{actName}, #{agencyName}, #{term}, #{content}, #{usersId}, #{startDate}, #{endDate}, now())
+    </insert>
+
+    <select id="getDiaryWrite" parameterType="com.unibuddy.be.diary.model.dto.DiaryWriteDTO" resultType="com.unibuddy.be.diary.model.dto.DiaryWriteDTO">
+        select
+            act_id as actId
+            , title
+            , act_name as actName
+            , agency_name as agencyName
+            , term
+            , content
+            , users_id as usersId
+            , start_date as startDate
+            , end_date as endDate
+            , reg_date as regDate
+        from diary_write
+        where act_id = #{actId}
+          and users_id = #{usersId}
+    </select>
+
+    <select id="getDiaryWriteList" parameterType="com.unibuddy.be.diary.model.dto.DiaryWriteDTO" resultType="com.unibuddy.be.diary.model.dto.DiaryWriteDTO">
+        select
+            act_id as actId
+             , title
+             , act_name as actName
+             , agency_name as agencyName
+             , term
+             , content
+             , users_id as usersId
+             , start_date as startDate
+             , end_date as endDate
+             , reg_date as regDate
+        from diary_write
+        where users_id = #{usersId}
+        order by reg_date desc
+    </select>
+
+    <delete id="deleteDiaryWrite" parameterType="Integer">
+        delete from diary_write where act_id = #{actid}
+    </delete>
+</mapper>

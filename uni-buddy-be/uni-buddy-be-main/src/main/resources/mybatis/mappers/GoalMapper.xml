@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.goal.model.dao.GoalMapper">
+    <select id="getGoalToMonth" parameterType="String" resultType="com.unibuddy.be.goal.model.dto.GoalDTO">
+        SELECT
+            goal_num as goalNum
+            , goal_content as goalContent
+            , `year_month` as yearMonth
+            , users_id as userId
+        FROM goal
+        WHERE `year_month` = #{yearMonth}
+    </select>
+
+    <insert id="saveGoalToMonth" parameterType="com.unibuddy.be.goal.model.dto.GoalDTO">
+        INSERT INTO goal (goal_content, `year_month`, users_id) VALUES (#{goalContent},#{yearMonth},#{usersId})
+    </insert>
+
+    <delete id="deleteGoalToMonth" parameterType="Integer">
+        DELETE FROM goal WHERE goal_num = #{goalNum}
+    </delete>
+</mapper>

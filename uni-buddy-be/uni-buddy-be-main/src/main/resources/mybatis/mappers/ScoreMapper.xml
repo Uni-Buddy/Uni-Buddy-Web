@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.score.model.dao.ScoreMapper">
+    <sql id="score_column">
+        semester
+        , semester_type as semesterType
+        , avg_score as avgScore
+        , max_avg_score as maxAvgScore
+        , get_score as getScore
+        , max_get_score as maxGetScore
+        , users_id as usersId
+    </sql>
+
+    <select id="getScoreForTheSemester" parameterType="com.unibuddy.be.score.model.dto.TimeScoreDTO" resultType="com.unibuddy.be.score.model.dto.TimeScoreDTO">
+        SELECT
+            <include refid="score_column"/>
+        FROM time_score
+        WHERE semester_type = #{semesterType}
+        and users_id = #{usersId}
+    </select>
+
+    <insert id="saveScoreForTheSemester" parameterType="com.unibuddy.be.score.model.dto.TimeScoreDTO">
+        INSERT INTO time_score (semester_type, avg_score, max_avg_score, get_score, max_get_score, users_id)
+        VALUES (#{semesterType}, #{avgScore}, #{maxAvgScore}, #{getScore}, #{maxGetScore}, #{usersId})
+    </insert>
+
+    <update id="updateScoreForTheSemester" parameterType="com.unibuddy.be.score.model.dto.TimeScoreDTO">
+        UPDATE time_score
+        set avg_score = #{avgScore}
+            , max_avg_score = #{maxAvgScore}
+            , get_score = #{getScore}
+            , max_get_score = #{maxGetScore}
+        where users_id = #{usersId}
+        and semester_type = #{semesterType}
+    </update>
+
+    <delete id="deleteScoreForTheSemester" parameterType="com.unibuddy.be.score.model.dto.TimeScoreDTO">
+        DELETE FROM time_score WHERE semester_type = #{semesterType} and users_id = #{usersId}
+    </delete>
+</mapper>

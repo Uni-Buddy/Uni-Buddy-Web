@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.unibuddy.be.users.model.dao.UsersMapper">
+    <insert id="registerUser" parameterType="com.unibuddy.be.users.model.dto.UsersDTO">
+        insert into users (`email`, pw , university , `name`, hash, sns, education, phone, new_pw, birthday, comment)
+        values (#{email}, HEX(AES_ENCRYPT(#{pw}, 'unibuddy')), #{university}, #{name}, #{hash}, #{sns}, #{education}, #{phone}, #{newPw}, #{birthday}, #{comment})
+    </insert>
+
+    <select id="getUserForEmail" resultType="com.unibuddy.be.users.model.dto.UsersDTO">
+        SELECT id, email, pw , university , name, hash, sns, education, phone, new_pw as newPw, birthday, comment
+        FROM users
+        where email = #{email}
+    </select>
+
+    <select id="getLogin" resultType="com.unibuddy.be.users.model.dto.UsersDTO">
+        SELECT id, email, pw , university , name, hash, sns, education, phone, new_pw as newPw, birthday, comment
+        FROM users
+        where email = #{email}
+        and pw = HEX(AES_ENCRYPT(#{pw}, 'unibuddy'))
+    </select>
+
+    <delete id="deleteUserForEmail" parameterType="String">
+        delete from users where email = #{email}
+    </delete>
+
+    <update id="updateUserInfo" parameterType="com.unibuddy.be.users.model.dto.UsersDTO">
+        update users
+        set pw = #{pw}
+          , university = #{university}
+          , name = #{name}
+          , hash = #{hash}
+          , sns = #{sns}
+          , education = #{education}
+          , phone = #{phone}
+          , new_pw = #{newPw}
+          , birthday = #{birthday}
+          , comment = #{comment}
+        where email = #{email}
+    </update>
+</mapper>
